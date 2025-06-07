@@ -10,14 +10,14 @@
  */
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-         if(head==null||head.next==null||n==0)
+        if(head==null||head.next==null||n==0)
          {
             return null;
          }
-         int c=0;
+         int c=1;
          ListNode tail=head;
          
-         while(tail!=null)
+         while(tail.next!=null)
          {
             c++;
             tail=tail.next;
@@ -39,4 +39,4 @@ class Solution {
           }
           return head;
     }
- }
+}
