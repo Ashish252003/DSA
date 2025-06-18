@@ -1,27 +1,22 @@
 class Solution {
     public boolean isHappy(int n) {
-        return happy(n);
-    }
-
-    public boolean happy(int n) {
-        int sum = 0;
-        int temp = n;
-
-        while (temp != 0) {
-            int d = temp % 10;
-            sum += d * d;
-            temp = temp / 10;
+        int num = n;
+        int sum;
+        for (int i = 0; i < 100; i++) {
+            sum = 0;
+            while (num > 0) {
+                int digit = num % 10;
+                sum += digit * digit;
+                num = num / 10;
+            }
+            if (sum == 1) {
+                System.out.println("happy");
+                return true;
+            }
+            num = sum;
         }
-
-        if (sum == 1) {
-            return true;
-        } 
-        else if(n==4)
-        {
-            return false;
-        }
-        else {
-            return happy(sum);
-        }
+        System.out.println("no");
+        return false;
+       
     }
 }
