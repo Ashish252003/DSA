@@ -20,14 +20,14 @@ class Solution {
             fast=fast.next.next;
 
          }
-         ListNode curr=slow.next,prev=null,future=null;
+         ListNode curr=slow.next,prev=null,fut=null;
          slow.next=null;
          while(curr!=null)
          {
-            future=curr.next;
+            fut=curr.next;
             curr.next=prev;
             prev=curr;
-            curr=future;
+            curr=fut;
          }
          ListNode sh=prev;
          ListNode fh=head;
