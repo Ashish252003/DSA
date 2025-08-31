@@ -8,7 +8,7 @@ class Solution {
         HashMap<Integer, Integer> map = new HashMap<>();
 
         for (int num : nums2) {
-            // Corrected this while loop condition
+           
             while (!st.isEmpty() && st.peek() < num) {
                 map.put(st.pop(), num);
             }
